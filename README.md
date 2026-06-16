@@ -1,154 +1,198 @@
-# Biomedical Engineer Portfolio
+# 🧬 Biomedical Engineer 3D Portfolio
 
-A professional portfolio website showcasing biomedical engineering expertise and culinary passion.
+An interactive 3D portfolio built with React, Three.js, Vite, and React Three Fiber. Showcase your biomedical engineering expertise and culinary passion in an immersive 3D environment.
 
-## 📋 Overview
+## ✨ Features
 
-This portfolio highlights:
-- **Professional Expertise**: Medical device design, biomechanics, FDA compliance, and healthcare technology
-- **Featured Projects**: Innovative solutions in diagnostic devices, prosthetics, monitoring systems, and surgical instruments
-- **Technical Skills**: CAD design, FEA simulation, programming, and testing methodologies
-- **Personal Touch**: Culinary passion and home chef adventures
+### 🎨 3D Visualization
+- **Interactive 3D Scenes** - Each section has unique 3D representations
+- **Dynamic Animations** - Floating objects, particle effects, and smooth transitions
+- **Responsive Canvas** - Optimized for all screen sizes
+- **Sparkle Effects** - Beautiful particle system for visual appeal
+- **Lighting System** - Professional multi-point lighting setup
 
-## 🎯 Features
+### 📱 Sections
+1. **Home** - Animated sphere with introduction
+2. **Projects** - Interactive project cards in 3D space
+3. **Skills** - Orbiting skill spheres with labels
+4. **Hobbies** - Culinary passion visualization
+5. **Contact** - Interactive contact information
 
-### Navigation Sections
-1. **Home** - Striking hero section with introduction
-2. **About** - Professional background and personal interests
-3. **Projects** - Featured biomedical engineering projects with details
-4. **Skills** - Comprehensive technical skills organized by category
-5. **Hobbies** - Culinary expertise and cooking specialties
-6. **Contact** - Multiple ways to get in touch
-
-### Design Features
-- **Responsive Design**: Fully responsive for mobile, tablet, and desktop
-- **Modern Aesthetics**: Gradient backgrounds with professional color scheme
-- **Interactive Elements**: Smooth scrolling, hover effects, and animations
-- **Accessibility**: Semantic HTML and proper contrast ratios
-- **Performance**: Optimized for fast loading and smooth animations
-
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic structure
-- **CSS3**: Modern styling with gradients and flexbox/grid
-- **JavaScript**: Interactive features and animations
-- **No Dependencies**: Pure vanilla implementation
-
-## 📁 File Structure
-
-```
-portfolio/
-├── index.html          # Main HTML file
-├── styles.css          # All CSS styling
-├── script.js           # JavaScript interactivity
-└── README.md           # This file
-```
+### 🎯 Technologies
+- **React 18** - Modern UI framework
+- **Three.js** - 3D graphics library
+- **React Three Fiber** - React renderer for Three.js
+- **Drei** - Useful helpers for React Three Fiber
+- **Vite** - Fast build tool and dev server
 
 ## 🚀 Getting Started
 
-### Local Development
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/shaqeebSk/testing-agent.git
-   cd testing-agent
-   ```
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-2. Open `index.html` in your web browser
+### Installation
 
-3. To customize:
-   - Update personal information in HTML
-   - Modify colors in CSS (primary: #667eea, secondary: #764ba2)
-   - Add your actual project details and images
-   - Update contact links with your real information
+```bash
+# Clone the repository
+git clone https://github.com/shaqeebSk/testing-agent.git
+cd testing-agent
 
-### Deploy to GitHub Pages
-1. Push to GitHub (repository already set up)
-2. Go to Settings > Pages
-3. Select main branch as source
-4. Site will be available at `https://shaqeebSk.github.io/testing-agent`
+# Install dependencies
+npm install
 
-## 📱 Responsive Breakpoints
-
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
-
-## 🎨 Color Scheme
-
-- **Primary Blue**: #667eea
-- **Secondary Purple**: #764ba2
-- **Dark Blue**: #1e3c72
-- **Light Background**: #f9f9f9
-- **Warm Accent**: #fcb69f
-
-## ✨ Key Sections Explained
-
-### Hero Section
-Eye-catching introduction with call-to-action button
-
-### About Section
-Professional background blended with personal culinary interests
-
-### Projects Section
-Four featured biomedical engineering projects with key technologies used
-
-### Skills Section
-Organized technical competencies in four categories:
-- Design & Modeling (CAD, FEA)
-- Medical Knowledge (Device Design, FDA)
-- Programming (Python, C++, LabVIEW)
-- Lab & Testing (Prototyping, QC)
-
-### Hobbies Section
-Dedicated space for culinary passion showcasing:
-- Chef specialties
-- Featured dishes
-- Cooking philosophy
-
-### Contact Section
-Multiple contact options (Email, LinkedIn, GitHub)
-
-## 🔧 Customization Guide
-
-### Add Your Projects
-Edit the Projects section in `index.html` and update:
-- Project titles
-- Descriptions
-- Key technologies used
-
-### Update Skills
-Modify the Skills section with your specific competencies
-
-### Add Images
-Create an `images/` folder and reference in HTML:
-```html
-<img src="images/project-name.jpg" alt="Project description">
+# Start development server
+npm run dev
 ```
 
-### Change Colors
-Update CSS variables or modify color values directly in `styles.css`
+The portfolio will open at `http://localhost:3000`
 
-## 📊 Analytics Integration
+### Build for Production
 
-To add Google Analytics:
-```html
-<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'YOUR_GA_ID');
-</script>
+```bash
+npm run build
 ```
 
-## 📄 License
+Output will be in the `dist` folder.
 
-This portfolio is open source and available under the MIT License.
+## 📁 Project Structure
+
+```
+src/
+├── main.jsx              # Entry point
+├── App.jsx               # Main app component
+├── App.css               # App styles
+└── components/
+    ├── Scene3D.jsx       # 3D scene components
+    ├── ProjectCard.jsx   # Project visualization
+    └── UI.jsx            # UI controls and panels
+```
+
+## 🎮 Controls
+
+- **Drag Mouse** - Rotate the 3D view
+- **Scroll** - Zoom in/out
+- **Click Navigation** - Switch between sections
+- **Auto Rotate** - Automatic scene rotation (OrbitControls)
+
+## 🎨 Customization
+
+### Colors
+Update the color values in `Scene3D.jsx`:
+```javascript
+color="#667eea"  // Primary blue
+color="#764ba2"  // Secondary purple
+color="#fcb69f"  // Warm accent
+```
+
+### Add New Projects
+Edit `Scene3D.jsx` and add more `ProjectCard` components:
+```jsx
+<ProjectCard
+  position={[12, 0, 0]}
+  title="Your Project"
+  description="Your description"
+  color="#your-color"
+/>
+```
+
+### Add New Skills
+Extend the `skills` array in `SkillsVisualization`:
+```javascript
+const skills = [
+  { name: 'Your Skill', color: '#color' },
+  // ...
+];
+```
+
+## 🌐 Deployment
+
+### GitHub Pages
+1. Build the project: `npm run build`
+2. Push the `dist` folder to your repository
+3. Enable GitHub Pages in repository settings
+4. Your site will be live at `https://shaqeebSk.github.io/testing-agent`
+
+### Netlify
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Deploy
+netlify deploy
+```
+
+### Vercel
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Deploy
+vercel
+```
+
+## 🎯 Components Overview
+
+### Scene3D.jsx
+Contains all 3D visualizations:
+- Different scenes for each section
+- Lighting setup
+- Particle effects (Sparkles)
+- 3D models and text
+
+### ProjectCard.jsx
+Reusable 3D card component for projects:
+- Animated rotation and floating
+- Distortion material effect
+- Customizable colors and text
+
+### UI.jsx
+Navigation and content panels:
+- Section navigation
+- Dynamic content display
+- Info panels
+- Responsive design
+
+## 🔧 Performance Optimization
+
+- Vite's fast build process
+- Three.js optimized rendering
+- CSS backdrop filters for UI
+- Level of detail (LOD) for complex geometries
+- Efficient particle system
+
+## 📊 Browser Support
+
+- Chrome/Chromium (recommended)
+- Firefox
+- Safari
+- Edge
+
+## 🎓 Learning Resources
+
+- [React Three Fiber Documentation](https://docs.pmnd.rs/react-three-fiber/)
+- [Three.js Documentation](https://threejs.org/docs/)
+- [Drei Helpers](https://github.com/pmndrs/drei)
+- [Vite Documentation](https://vitejs.dev/)
+
+## 🚀 Future Enhancements
+
+- [ ] Add more interactive 3D models
+- [ ] Implement blog section with 3D cards
+- [ ] Add sound effects
+- [ ] Create custom 3D avatar
+- [ ] Implement AR support
+- [ ] Add dark/light mode toggle
+- [ ] Mobile touch gestures
+
+## 📝 License
+
+MIT License - feel free to use this for your own portfolio!
 
 ## 🤝 Support
 
-For questions or suggestions, please open an issue or contact directly.
+For questions or improvements, please open an issue or submit a pull request.
 
 ---
 
-**Happy Coding & Cooking! 👨‍💻🍳**
+**Happy Coding! 🧬🍳**
